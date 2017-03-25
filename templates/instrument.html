@@ -1,9 +1,14 @@
 {% extends "category.html" %}
 {% block specific %}
-	<div>
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<h4>Name</h4><br>
 		{{instrument.name}} <br>
+		<h4>Description</h4> <br>
 		{{instrument.description}} <br>
+		<h4>Brand</h4> <br>
 		{{instrument.brand}} <br>
+		<h4>Color</h4> <br>
 		{{instrument.color}} <br>
 		<a href="{{ url_for('editInstrument', category_id=category.id, instrument_id=instrument.id) }}">Edit</a>
 		<a href="{{ url_for('deleteInstrument', category_id=category.id, instrument_id=instrument.id) }}">Delete</a>

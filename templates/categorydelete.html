@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="{{ url_for('deleteCategory', category_id=category.id) }}" method="post">
+<form class="navbar-form" action="{{ url_for('deleteCategory', category_id=category.id) }}" method="post">
 	Are you sure you want to permanently delete {{category.category}}?
 	<br> 
-	<input type="submit" value="Delete">
+	<input class="btn btn-default" type="submit" value="Delete">
 	<a href="{{ url_for('displayCategory', category_id=category.id) }}">Cancel</a>
 </form>
 {% endblock %}

@@ -1,20 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
-	<div>
-		<a href="{{ url_for('displayCategory', category_id=category.id) }}">{{category.category}}</a>
-		<a href="{{ url_for('editCategory', category_id=category.id) }}">Edit</a>
-		<a href="{{ url_for('deleteCategory', category_id=category.id) }}">Delete</a>
+	<div class="col-md-12 panel panel-default">
+		<div class="col-md-2"></div>
+		<a class="col-md-8 label label-default" style="font-size: 30px;" href="{{ url_for('displayCategory', category_id=category.id) }}">{{category.category}}</a>
+		<a class="col-md-1 btn btn-default" style="font-size: 23px;" href="{{ url_for('editCategory', category_id=category.id) }}">Edit</a>
+		<a class="col-md-1 btn btn-default" style="font-size: 23px;" href="{{ url_for('deleteCategory', category_id=category.id) }}">Delete</a>
 	</div>
 {% block specific %}
-	<div>
-		<a href="{{ url_for('addInstrument', category_id=category.id) }}">Click Here to Add an Instrument</a>
+	<div class="row">
+		<div class="col-md-5"></div>
+		<a class="col-md-2 btn btn-default" href="{{ url_for('addInstrument', category_id=category.id) }}">Add an Instrument</a>
 	</div>
-	<div>
+	<div style="padding-top: 5px;" class="row">
 		{% for instrument in instruments %}
-			<div>
-				<a href="{{ url_for('displayInstrument', category_id=category.id, instrument_id=instrument.id) }}">{{instrument.name}}</a>
-				<a href="{{ url_for('editInstrument', category_id=category.id, instrument_id=instrument.id) }}">Edit</a>
-				<a href="{{ url_for('deleteInstrument', category_id=category.id, instrument_id=instrument.id) }}">Delete</a>
+			<div class="col-md-offset-2 col-md-8 panel panel-default">
+				<div class="panel panel-heading">
+					<h3 class="panel-title">
+						<a href="{{ url_for('displayInstrument', category_id=category.id, instrument_id=instrument.id) }}">{{instrument.name}}</a>
+						<a style="padding-left: 30px;" href="{{ url_for('editInstrument', category_id=category.id, instrument_id=instrument.id) }}">Edit</a>
+						<a href="{{ url_for('deleteInstrument', category_id=category.id, instrument_id=instrument.id) }}">Delete</a>
+					</h3>
+				</div>
+				<div class="panel panel-body">
+					{{instrument.description}}
+				</div>
 			</div>
 		{% endfor %}
 	</div>

@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<form action="{{ url_for('addCategory') }}" method='post'>
-	<div>
+<form class="navbar-form" action="{{ url_for('addCategory') }}" method='post'>
+	<div class="form-group">
 		Category: <br>
-		<input type="text" name="category"> <br>
-		<input type="submit">
+		<input class="form-control" type="text" name="category"> <br>
+		<input class="btn btn-default" type="submit">
 		<a href="{{ url_for('displayHome') }}">Cancel</a>			
 	</div>
 </form>

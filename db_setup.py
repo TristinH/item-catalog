@@ -20,6 +20,8 @@ class InstrumentCategory(Base):
 	# Fields for information to store
 	id = Column(Integer, primary_key=True)
 	category = Column(String(100), nullable=False)
+	user = relationship(User)
+	user_id = Column(Integer, ForeignKey('user.id'))
 
 	@property
 	def serialize(self):
@@ -42,6 +44,8 @@ class Instrument(Base):
 	color = Column(String(30))
 	category = relationship(InstrumentCategory)
 	category_id = Column(Integer, ForeignKey('category.id'))
+	user = relationship(User)
+	user_id = Column(Integer, ForeignKey('user.id'))
 
 	@property
 	def serialize(self):

@@ -1,16 +1,16 @@
 {% extends "category.html" %}
 {% block specific %}
-<form action="{{ url_for('editInstrument', category_id=category.id, instrument_id=instrument.id) }}" method='post'>
-	<div>
+<form class="navbar-form" action="{{ url_for('editInstrument', category_id=category.id, instrument_id=instrument.id) }}" method='post'>
+	<div class="form-group">
 		Edit Instrument Information: <br><br>
 		Name: <br>
-		<input type="text" name="name" value="{{instrument.name}}"> <br>
-		<textarea name="description">{{instrument.description}}</textarea> <br>
+		<input class="form-control" type="text" name="name" value="{{instrument.name}}"> <br>
+		<textarea class="form-control" name="description">{{instrument.description}}</textarea> <br>
 		Brand: <br>
-		<input type="text" name="brand" value="{{instrument.brand}}"> <br>
+		<input class="form-control" type="text" name="brand" value="{{instrument.brand}}"> <br>
 		Color: <br>
-		<input type="text" name="color" value="{{instrument.color}}"> <br>
-		<input type="submit">
+		<input class="form-control" type="text" name="color" value="{{instrument.color}}"> <br>
+		<input class="btn btn-default" type="submit">
 		<a href="{{ url_for('displayInstrument', category_id=category.id, instrument_id=instrument.id) }}">Cancel</a>
 	</div>
 </form>
