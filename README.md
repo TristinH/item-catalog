@@ -1,4 +1,4 @@
-Installation/Run Instructions:
+# Installation/Run Instructions:
 
 	Before trying to run the project ensure you have the latest versions of Flask and SQL Alchemy installed. You will also need 
 	python 2.7 installed. First run the file db_setup.py. To do this use the command "python db_setup.py" in your terminal. This
@@ -9,7 +9,7 @@ Installation/Run Instructions:
 	project.py". You should receive a response saying that the project is running on localhost port 5000. Open your browser and 
 	navigate to http://localhost:5000. This should take you to the home page of the application. 
 
-Configuration:
+# Configuration:
 	
 	During development the project was mainly coded using sublime as the text editor. It was tested in google chrome. The modules
 	from the python standard library used were string, random, httplib2, json, and requests. To be able to ensure the oauth 
@@ -18,7 +18,7 @@ Configuration:
 	client id. For the database, the modules used were create_engine and sessionmaker. Also, the ORM classes from the db_setup 
 	file are imported to perform database operations on the respective tables.
 
-Operation:
+# Operation:
 
 	The project supports all four database operation (create, read, update, and delete) for categories and items in the 
 	categories (in this case instrument categories and individual instruments). Click on links to add new categories/items or 
