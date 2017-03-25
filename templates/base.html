@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	<title>Browse various musical instruments</title>
+</head>
+<body>
+	<div class="title">
+		<a href="/">Musical Instrument Catalog</a> <br>
+		{% if username %}
+			<a href="#">Welcome, {{username}}</a>
+		{% else %}
+			<a href="{{ url_for('login') }}">login</a>
+		{% endif %}
+
+	</div>
+	<div>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+			<ul>
+				{% for message in messages %}
+				<li>{{message}}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		{% endwith %}
+	</div>
+	<div>
+		<a href="{{ url_for('addCategory') }}">Click Here to Add a Category</a>
+	</div>
+	<div class="title">
+		{% for category in categories %}
+			<a href="{{ url_for('displayCategory', category_id=category.id) }}">{{ category.category }}</a>
+		{% endfor %}
+	</div>
+	<div>
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>

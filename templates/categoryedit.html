@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{{ url_for('editCategory', category_id=category.id) }}" method="post">
+	Edit Category Information: 
+	<br>
+	<input type="text" name="category" placeholder="{{category.category}}">
+	<br>
+	<input type="submit">
+	<a href="{{ url_for('displayCategory', category_id=category.id) }}">Cancel</a>
+</form>
+{% endblock %}

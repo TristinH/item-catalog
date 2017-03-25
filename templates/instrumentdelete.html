@@ -1,0 +1,9 @@
+{% extends "category.html" %}
+{% block specific %}
+<form action="{{ url_for('deleteInstrument', category_id=category.id, instrument_id=instrument.id) }}" method="post">
+	Are you sure you want to permanently delete {{instrument.name}}?
+	<br> 
+	<input type="submit" value="Delete">
+	<a href="{{ url_for('displayInstrument', category_id=category.id, instrument_id=instrument.id) }}">Cancel</a>
+</form>
+{% endblock %}

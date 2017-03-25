@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+	<div>
+		<a href="{{ url_for('displayCategory', category_id=category.id) }}">{{category.category}}</a>
+		<a href="{{ url_for('editCategory', category_id=category.id) }}">Edit</a>
+		<a href="{{ url_for('deleteCategory', category_id=category.id) }}">Delete</a>
+	</div>
+{% block specific %}
+	<div>
+		<a href="{{ url_for('addInstrument', category_id=category.id) }}">Click Here to Add an Instrument</a>
+	</div>
+	<div>
+		{% for instrument in instruments %}
+			<div>
+				<a href="{{ url_for('displayInstrument', category_id=category.id, instrument_id=instrument.id) }}">{{instrument.name}}</a>
+				<a href="{{ url_for('editInstrument', category_id=category.id, instrument_id=instrument.id) }}">Edit</a>
+				<a href="{{ url_for('deleteInstrument', category_id=category.id, instrument_id=instrument.id) }}">Delete</a>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock%}
+{% endblock %}

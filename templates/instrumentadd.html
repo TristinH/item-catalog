@@ -1,0 +1,17 @@
+{% extends "category.html" %}
+{% block specific %}
+<form action="{{ url_for('addInstrument', category_id=category.id) }}" method='post'>
+	<div>
+		New Instrument: <br><br>
+		Name: <br>
+		<input type="text" name="name"> <br>
+		<textarea name="description" placeholder="description goes here"></textarea> <br>
+		Brand: <br>
+		<input type="text" name="brand"> <br>
+		Color: <br>
+		<input type="text" name="color"> <br>
+		<input type="submit">
+		<a href="{{ url_for('displayCategory', category_id=category.id) }}">Cancel</a>			
+	</div>
+</form>
+{% endblock %}
